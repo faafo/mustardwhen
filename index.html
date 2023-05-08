@@ -9,13 +9,16 @@
 <script src=""></script>
 <body>
 
+<font size="+10">
 <p id="timer"></p>
+</font>
+<img src="mustard-man-cky-band.gif"></img>
 
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("July 21, 2023 12:00:00").getTime();
 
-var x = setInterval(function()
+var procfunc = function()
 {
   var now = new Date().getTime();
   var distance = countDownDate - now;
@@ -31,6 +34,13 @@ var x = setInterval(function()
     clearInterval(x);
     document.getElementById("timer").innerHTML = "YO IT'S MUSTARD TIME";
   }
+}
+
+procfunc()
+
+var x = setInterval(function()
+{
+  procfunc()
 }, 1000);
 </script>
 
